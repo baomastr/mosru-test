@@ -43,9 +43,9 @@ $(document).ready(function () {
         $('#check-sex').prop("checked", !$('#check-sex').prop("checked"));
     });
 
-    // $('.female').click(function () {
-    //     $('#check-sex').trigger('click');
-    // });
+    $('.female').click(function () {
+        $('#check-sex').trigger('click');
+    });
 
     // $('#check-sex').is(":checked"));
 
