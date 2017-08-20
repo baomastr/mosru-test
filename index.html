@@ -14,7 +14,7 @@
 <body>
 
 <main class="wrapper">
-	<section class="form">
+	<form class="form" onsubmit="validate()">
 		<div class="form__inner row">
 			<div class="column">
 				<div class="form__title">
@@ -144,7 +144,7 @@
 				</div>
 
 				<div class="form__item form__checkbox row">
-					<input class="form__checkbox-input" type="checkbox" id="agree">
+					<input class="form__checkbox-input" type="checkbox" id="agree" required>
 					<label class="form__checkbox-label" for="agree">Я прочитал и соглашаюсь
 						с <a href="#">правилами</a> участия в акции.</label>
 				</div>
@@ -154,7 +154,7 @@
 			</div>
 		</div>
 
-	</section>
+	</form>
 </main>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

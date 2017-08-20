@@ -50,6 +50,7 @@ $(document).ready(function () {
     // $('#check-sex').is(":checked"));
 
 
+
     /*
      custom select
      */
@@ -98,6 +99,29 @@ $(document).ready(function () {
             $list.hide();
         });
 
+    });
+
+
+    function validate() {
+        var msg   = $('.form').serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'res.php',
+            data: msg,
+            success: function(data) {
+                // $('#results').html(data);
+            },
+            error:  function(xhr, str){
+                alert('Возникла ошибка: ' + xhr.responseCode);
+                $('.form__item--required').addClass('invalid');
+            }
+        });
+    };
+
+    $('input[type="email"]').blur(function() {
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        if (testEmail.test(this.value)) console.log('passed');
+        else console.log('failed');
     });
 
 
