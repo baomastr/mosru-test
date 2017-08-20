@@ -44,9 +44,9 @@
 				<div class="form__item">
 					<select class="form__input form__select" name="city" id="city">
 						<option class="form__select-option" value="">Город</option>
-						<option class="form__select-option" value="">Город1</option>
-						<option class="form__select-option" value="">Город2</option>
-						<option class="form__select-option" value="">Город3</option>
+						<option class="form__select-option" value="">Москва</option>
+						<option class="form__select-option" value="">Санкт-Петербург</option>
+						<option class="form__select-option" value="">Краснодар</option>
 					</select>
 				</div>
 				<div class="form__item">
@@ -54,12 +54,29 @@
 					<div class="form__input-placeholder">Телефон</div>
 				</div>
 				<div class="form__item form__item--sex row center">
-					<span class="male">Я - парень</span>
-					<label class="switch">
+					<!--<span class="male">Я - парень</span>-->
+					<!--<label class="switch">
 						<input id="check-sex" type="checkbox">
 						<span class="slider round"></span>
-					</label>
-					<span class="female">Я - девушка</span>
+					</label>-->
+					<div class="btn-switch">
+
+
+						<input type="radio" id="male" name="switch" class="btn-switch__radio btn-switch__radio--male" />
+						<input type="radio" checked id="female" name="switch" class="btn-switch__radio btn-switch__radio--female" />
+
+						<label for="male" class="btn-switch__label btn-switch__label--male">
+							<span class="btn-switch__txt">Я - парень</span>
+						</label>
+						<label for="female" class="btn-switch__label btn-switch__label--female">
+							<span class="btn-switch__txt">Я - девушка</span>
+						</label>
+
+
+
+					</div>
+
+					<!--<span class="female">Я - девушка</span>-->
 				</div>
 			</div>
 			<div class="column">
