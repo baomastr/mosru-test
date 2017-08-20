@@ -36,21 +36,6 @@ $(document).ready(function () {
         }
     }, false);
 
-
-
-    /*чекбокс "пол"*/
-    // $('.male').click(function () {
-    //     $('#check-sex').prop("checked", !$('#check-sex').prop("checked"));
-    // });
-    //
-    // $('.female').click(function () {
-    //     $('#check-sex').trigger('click');
-    // });
-
-    // $('#check-sex').is(":checked"));
-
-
-
     /*
      custom select
      */
@@ -102,30 +87,47 @@ $(document).ready(function () {
     });
 
 
-    function validate() {
-        var msg   = $('.form').serialize();
-        $.ajax({
-            type: 'POST',
-            url: 'res.php',
-            data: msg,
-            success: function(data) {
-                // $('#results').html(data);
-            },
-            error:  function(xhr, str){
-                alert('Возникла ошибка: ' + xhr.responseCode);
-                $('.form__item--required').addClass('invalid');
-            }
-        });
-    };
+    // function validate() {
+    //     var msg   = $('.form').serialize();
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'res.php',
+    //         data: msg,
+    //         success: function(data) {
+    //             // $('#results').html(data);
+    //         },
+    //         error:  function(xhr, str){
+    //             alert('Возникла ошибка: ' + xhr.responseCode);
+    //             $('.form__item--required').addClass('invalid');
+    //         }
+    //     });
+    // };
 
     $('input[type="email"]').blur(function() {
         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-        if (testEmail.test(this.value)) console.log('passed');
-        else console.log('failed');
+        if (testEmail.test(this.value)) {console.log('passed');}
+        else {
+            $(this).siblings('.form__input-placeholder').addClass('invalid');
+            console.log('failed');
+        }
     });
 
 
-    console.log($('input[type="file"]').value);
+    // change value on file upload
+    $('.form__file-text').click(function (){
+        $('[type="file"]').change(function() {
+            var file = $('[type="file"]')[0].files[0]
+            if (file){
+                console.log(file.name);
+                $('.form__file-text').text(file.name);
+            }
+        });
+    });
+
+    $('.btn-switch__txt').click(function (){
+        console.log('test');
+    })
+
 
     console.log('loaded');
 });
