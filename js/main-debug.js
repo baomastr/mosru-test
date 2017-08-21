@@ -1,11 +1,13 @@
 $(document).ready(function () {
 
-    /*маска для телефона*/
+
+    /*phone mask*/
     $(function(){
         $("#phone").mask("+7 (999) 999-99-99");
     });
 
-    /*показать/скрыть пароль*/
+
+    /*show/hide password*/
     function show() {
         var p = document.getElementById('pwd'),
             closed = document.getElementById('closed'),
@@ -14,7 +16,6 @@ $(document).ready(function () {
         closed.style.display = 'none';
         opened.style.display = 'block';
     }
-
     function hide() {
         var p = document.getElementById('pwd'),
             closed = document.getElementById('closed'),
@@ -23,9 +24,7 @@ $(document).ready(function () {
         closed.style.display = 'block';
         opened.style.display = 'none';
     }
-
     var pwShown = 0;
-
     document.getElementById("eye").addEventListener("click", function () {
         if (pwShown == 0) {
             pwShown = 1;
@@ -36,10 +35,10 @@ $(document).ready(function () {
         }
     }, false);
 
+
     /*
      custom select
      */
-
     $('select').each(function(){
         var $this = $(this), numberOfOptions = $(this).children('option').length;
 
@@ -87,22 +86,8 @@ $(document).ready(function () {
     });
 
 
-    // function validate() {
-    //     var msg   = $('.form').serialize();
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: 'res.php',
-    //         data: msg,
-    //         success: function(data) {
-    //             // $('#results').html(data);
-    //         },
-    //         error:  function(xhr, str){
-    //             alert('Возникла ошибка: ' + xhr.responseCode);
-    //             $('.form__item--required').addClass('invalid');
-    //         }
-    //     });
-    // };
 
+    // email validate
     $('input[type="email"]').blur(function() {
         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
         if (testEmail.test(this.value)) {console.log('passed');}
@@ -124,10 +109,5 @@ $(document).ready(function () {
         });
     });
 
-    $('.btn-switch__txt').click(function (){
-        console.log('test');
-    })
-
-
-    console.log('loaded');
+    // console.log('loaded');
 });
