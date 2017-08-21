@@ -94,10 +94,10 @@ $(document).ready(function () {
         else {
             $(this).siblings('.form__input-placeholder').addClass('invalid');
             if ($(this).val().length === 0) {
-                console.log('empty');
+                // console.log('empty');
                 $(this).siblings('.form__input-placeholder').removeClass('invalid');
             }
-            console.log('failed');
+            // console.log('failed');
         }
     });
 
